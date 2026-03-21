@@ -50,19 +50,14 @@ public class Calculator extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnCalculate) {
-
-            String first = txtFirstNum.getText().trim();
-            String second = txtSecondNum.getText().trim();
-
-            if (first.matches("\\d+") && second.matches("\\d+")) {
-                int sum = Integer.parseInt(first) + Integer.parseInt(second);
-                lblSum.setText(String.valueOf(sum));
-            }else{
-                JOptionPane.showMessageDialog(this, "Only integers are allowed.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-
-            
+        if(e.getSource() == btnCalculate){
+            String firstNum = txtFirstNum.getText();
+            String SecondNum = txtSecondNum.getText();
+            int intFirstNum = Integer.parseInt(firstNum);
+            int intSecondNum = Integer.parseInt(SecondNum);
+            int intSum = intFirstNum + intSecondNum;
+            String strSum = String.valueOf(intSum);
+            lblSum.setText(strSum);
         }
     }
     
